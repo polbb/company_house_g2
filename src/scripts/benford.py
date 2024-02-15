@@ -2,6 +2,11 @@ from database import get_ixbrl_data_from_dynamodb
 
 import matplotlib.pyplot as plt
 
+import streamlit as st
+
+import plotly.graph_objects as go
+import streamlit as st
+
 def benford(company_number):
         
     # Benford's Law application with frequencies in percentage
@@ -26,15 +31,12 @@ def benford(company_number):
         if total_values > 0:  # Prevent division by zero
             first_digit_frequencies[digit] = (frequency / total_values) * 100
 
-    # Plotting the frequencies against Benford's Law expected distribution
+    # Plotting the frequencies against Benford's Law expected distribution using Plotly for Streamlit
     benford_distribution = [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6]  # Expected percentages
-    fig, ax = plt.subplots()
-    ax.bar(first_digit_frequencies.keys(), first_digit_frequencies.values(), label='Observed Frequencies', alpha=0.7)
-    ax.plot(list(first_digit_frequencies.keys()), benford_distribution, color='red', label='Benford\'s Law Expected Distribution')
-    ax.set_xlabel('First Digit')
-    ax.set_ylabel('Frequency (%)')
-    ax.set_title('Benford\'s Law Distribution')
-    ax.legend()
-    plt.show()
+    fig = go.Figure()
+    fig.add_trace(go.Bar(x=list(first_digit_frequencies.keys()), y=list(first_digit_frequencies.values()), name='Observed Frequencies'))
+    fig.add_trace(go.Scatter(x=list(first_digit_frequencies.keys()), y=benford_distribution, mode='lines+markers', name='Benford\'s Law Expected Distribution'))
+    fig.update_layout(title='Benford\'s Law Distribution', xaxis_title='First Digit', yaxis_title='Frequency (%)', legend_title='Legend')
+    st.plotly_chart(fig)
     
     return first_digit_frequencies
