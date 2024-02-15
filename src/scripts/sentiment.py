@@ -17,7 +17,7 @@ import os
 client = OpenAI(api_key=st.secrets.openai)
 
 
-@st.cache_data
+# @st.cache_data
 def sentiment_analysis():
 
     thread = client.beta.threads.create()
