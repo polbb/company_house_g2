@@ -325,7 +325,7 @@ def get_stocks_xhtml_single_run(client, file_path):
 def analyse_itr(companyID, itr, n, stats):
     # get profile
     profile = get_company_profile(companyID)
-    ixbrl_data = get_ixbrl_data_from_dynamodb(companyID)
+    # ixbrl_data = get_ixbrl_data_from_dynamodb(companyID)
     
     # st.write(ixbrl_data)
     # st.write(f'ixbrl: {ixbrl_data['Item']['ixbrlData']}')
@@ -351,7 +351,7 @@ def analyse_itr(companyID, itr, n, stats):
     message_content = (
         f'I will give you financial data for a company. '
         f'Information about the company can be found in the file {profile}. Use this for overall context. '
-        f'Ixbrl data of the company is provided in the file  {ixbrl_data}. Make sure to read all this data to find relevant information. '
+        # f'Ixbrl data of the company is provided in the file  {ixbrl_data}. Make sure to read all this data to find relevant information. '
         f'Comparison Research Set (Comps) = {n} SME. '
         f'The Inventory Turns Ratio for the company is {itr}. '
         f'The statistinc for the {n} SME set for the ITR are: '
