@@ -36,7 +36,7 @@ def benford(company_number):
     fig = go.Figure()
     fig.add_trace(go.Bar(x=list(first_digit_frequencies.keys()), y=list(first_digit_frequencies.values()), name='Observed Frequencies'))
     fig.add_trace(go.Scatter(x=list(first_digit_frequencies.keys()), y=benford_distribution, mode='lines+markers', name='Benford\'s Law Expected Distribution'))
-    fig.update_layout(title='Benford\'s Law Distribution', xaxis_title='First Digit', yaxis_title='Frequency (%)', legend_title='Legend')
+    fig.update_layout(title='Benford\'s Law Distribution', xaxis_title='First Digit', yaxis_title='Frequency (%)', legend_title='Legend', legend=dict(x=0, y=-0.5, orientation='h'))
     st.plotly_chart(fig)
     
     return first_digit_frequencies
