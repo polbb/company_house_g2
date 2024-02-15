@@ -322,6 +322,7 @@ def get_stocks_xhtml_single_run(client, file_path):
 
     return stocks, stocks_str
 
+@st.cache_data
 def analyse_itr(companyID, itr, n, stats):
     # get profile
     profile = get_company_profile(companyID)

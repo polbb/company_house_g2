@@ -12,9 +12,12 @@ import os
 # openai_key = os.environ.get('openai') # same as os.getenv('openai)
 # client = OpenAI(api_key=openai_key)
 
+
 # BELOW IS FOR STREAMLIT DEPLOYMENT
 client = OpenAI(api_key=st.secrets.openai)
 
+
+@st.cache_data
 def sentiment_analysis():
 
     thread = client.beta.threads.create()
