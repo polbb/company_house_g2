@@ -30,6 +30,7 @@ def sentiment_analysis():
         f'Do a sentiment analysis. '
         'Start with a summary of the overall sentiment. '
         'You can expand with specifics after the summary. '
+        'Be brief. '
         f'Output your sentiment analysis as response. '
 
     )
