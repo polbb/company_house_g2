@@ -154,7 +154,7 @@ def streamlit_xhtml(company_number):
 
 
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Analysis", "Data", "Plots", "Benford"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Analysis", "Data", "Plots", "Veracity"])
 
     with tab4:
         # Benford's Law application with frequencies in percentage
