@@ -359,6 +359,7 @@ def analyse_itr(companyID, itr, n, stats):
         f'Do a comparative analysis. '
         f'Tell about how company compares to the stats in terms of ITR. '
         f'What are the implications from an underwriter perspective?'
+        f'Be brief. '
         f'Please do not ask any questions back. '
         f'If you need to do further processing go ahead, no need to ask. '
         f'Please give me a final answer. '
