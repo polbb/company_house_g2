@@ -15,13 +15,15 @@ def streamlit_xhtml(company_number):
 
     # DISPLAY COMPANY INFO
     name_str = get_company_name(company_number) # Todo retrieve from DB instead
+    
+    with st.sidebar:
+        st.title('Assistant')
+        st.divider()
 
     st.subheader(f"Company Name: {name_str}")
     st.divider()
 
-    with st.sidebar:
-        st.title('Assistant')
-        st.divider()
+
     
 
     # GET FINANCIAL INDICATORS

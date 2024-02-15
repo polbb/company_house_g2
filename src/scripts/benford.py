@@ -1,5 +1,7 @@
 from database import get_ixbrl_data_from_dynamodb
 
+import matplotlib.pyplot as plt
+
 def benford(company_number):
         
     # Benford's Law application with frequencies in percentage
@@ -19,10 +21,20 @@ def benford(company_number):
             except ValueError:
                 continue
     
-
     # Convert frequencies to percentages
     for digit, frequency in first_digit_frequencies.items():
         if total_values > 0:  # Prevent division by zero
             first_digit_frequencies[digit] = (frequency / total_values) * 100
+
+    # Plotting the frequencies against Benford's Law expected distribution
+    benford_distribution = [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6]  # Expected percentages
+    fig, ax = plt.subplots()
+    ax.bar(first_digit_frequencies.keys(), first_digit_frequencies.values(), label='Observed Frequencies', alpha=0.7)
+    ax.plot(list(first_digit_frequencies.keys()), benford_distribution, color='red', label='Benford\'s Law Expected Distribution')
+    ax.set_xlabel('First Digit')
+    ax.set_ylabel('Frequency (%)')
+    ax.set_title('Benford\'s Law Distribution')
+    ax.legend()
+    plt.show()
     
     return first_digit_frequencies
