@@ -31,10 +31,6 @@ def sentiment_analysis():
         'Start with a summary of the overall sentiment. '
         'You can expand with specifics after the summary. '
         f'Output your sentiment analysis as response. '
-        # f'After extracting all the text, find the "strategic report" if there is one . '
-        # f'I would suggest the following step: we could try to extract all the text in the document and look for the title "Strategic Report" followed by the associated content. '
-        # f'Save the content to a text file. '
-        # f'You MUST save a text file and give me the file id. '
 
     )
 
@@ -75,10 +71,9 @@ def sentiment_analysis():
 
     display_thread_messages(messages)
 
-    # create a list of messages that can be used to write a log
-    messages_list = create_thread_message_lists(messages)
+    # # create a list of messages that can be used to write a log
+    # messages_list = create_thread_message_lists(messages)
 
     response = messages.data[0].content[0].text.value
-    # print(messages.data[0].content[0].text.value)
 
     return response
