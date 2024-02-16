@@ -161,11 +161,10 @@ def streamlit_xhtml(company_number):
     with tab4:
         # Benford's Law application with frequencies in percentage
         first_digit_frequencies = benford(company_number)
-        first_digit_df = pd.DataFrame(list(first_digit_frequencies.items()), columns=['Modulus', 'Frequency (%)']).set_index('Modulus')
+        first_digit_df = pd.DataFrame(list(first_digit_frequencies.items()), columns=['Modulus', 'Frequency (%)'])
         
-        # Display the frequencies in a table with the index named as 'First Digit'
-        st.table(first_digit_df)
-        
+        # Display the frequencies in a dataframe with the index hidden
+        st.dataframe(first_digit_df, index=False)
     with tab1:
             
         if 'dataframe' in locals() or 'dataframe' in globals():
