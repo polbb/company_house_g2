@@ -376,7 +376,7 @@ def analyse_itr(companyID, itr, n, stats):
         thread_id= thread.id,
     )
 
-    with st.spinner('Assistant analysing...'):
+    with st.spinner('Analysis by ArgoX.ai...'):
         wait_on_run(client=client, run=run, thread=thread)
 
     messages = client.beta.threads.messages.list(

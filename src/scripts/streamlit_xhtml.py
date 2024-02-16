@@ -17,10 +17,10 @@ def streamlit_xhtml(company_number):
     name_str = get_company_name(company_number) # Todo retrieve from DB instead
     
     with st.sidebar:
-        st.title('Assistant')
+        st.title('Analysis by ArgoX.ai')
         st.divider()
 
-    st.subheader(f"Company Name: {name_str}")
+    st.subheader(f"Target Company: {name_str}")
     st.divider()
 
 
@@ -152,7 +152,7 @@ def streamlit_xhtml(company_number):
             dataframe = calculate_financial_ratios(dataframe) #add ratios columns
             statistics = calculate_statistics(dataframe)
 
-            st.markdown(f"<span style='color: green; font-size: 30px;'>Comparison Research Set (Comps) = {n} SME</span>", unsafe_allow_html=True)
+            st.markdown(f"<span style='color: green; font-size: 30px;'>Comparison Research Set (Comps) = {n} SME Companies</span>", unsafe_allow_html=True)
 
 
 
@@ -165,7 +165,7 @@ def streamlit_xhtml(company_number):
         
         # Display the frequencies in a dataframe with the index hidden
         st.dataframe(first_digit_df, hide_index=True)
-        
+
     with tab1:
             
         if 'dataframe' in locals() or 'dataframe' in globals():
