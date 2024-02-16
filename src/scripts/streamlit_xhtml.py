@@ -163,7 +163,7 @@ def streamlit_xhtml(company_number):
         first_digit_frequencies = benford(company_number)
         
         # Display the frequencies in a table with named columns
-        st.table(first_digit_frequencies, columns=["Digit", "Frequency"], use_container_width=True)
+        st.table(first_digit_frequencies)
 
     with tab1:
             
