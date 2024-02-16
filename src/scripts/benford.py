@@ -35,8 +35,8 @@ def benford(company_number):
     benford_distribution = [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6]  # Expected percentages
     fig = go.Figure()
     fig.add_trace(go.Bar(x=list(first_digit_frequencies.keys()), y=list(first_digit_frequencies.values()), name='Observed Frequencies'))
-    fig.add_trace(go.Scatter(x=list(first_digit_frequencies.keys()), y=benford_distribution, mode='lines+markers', name='Benford\'s Law Expected Distribution'))
-    fig.update_layout(title='Benford\'s Law Distribution', xaxis_title='First Digit', yaxis_title='Frequency (%)', legend_title='Legend')
+    fig.add_trace(go.Scatter(x=list(first_digit_frequencies.keys()), y=benford_distribution, mode='lines+markers', name='BLD Expected'))
+    fig.update_layout(title='BLD Method Review', xaxis_title='Modulus', yaxis_title='Frequency (%)', legend_title='Legend')
     fig.update_xaxes(type='category')  # Show all numbers on x-axis
     st.plotly_chart(fig)
     
