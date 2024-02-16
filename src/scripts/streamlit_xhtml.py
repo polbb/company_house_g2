@@ -164,8 +164,7 @@ def streamlit_xhtml(company_number):
         first_digit_df = pd.DataFrame(first_digit_frequencies.items(), columns=['First Digit', 'Frequency (%)'])
         
         # Display the frequencies in a table with named columns
-        st.table(first_digit_df)
-
+        st.table(first_digit_df.reset_index(drop=True))  # Remove the index column
     with tab1:
             
         if 'dataframe' in locals() or 'dataframe' in globals():
