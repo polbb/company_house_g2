@@ -313,7 +313,9 @@ def streamlit_xhtml(company_number):
         st.title('Sentiment')
         text = sentiment_analysis()
         st.write(text)
+        
         st.divider()
+
         st.title('Comparative Analysis')
         analyse_itr(
             companyID=company_number,
