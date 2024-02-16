@@ -313,7 +313,7 @@ def streamlit_xhtml(company_number):
         st.title('Sentiment')
         text = sentiment_analysis()
         st.write(text)
-        
+
         st.divider()
 
         st.title('Comparative Analysis')
@@ -325,5 +325,5 @@ def streamlit_xhtml(company_number):
         )
 
 
-    # st.text('Code Frozen 17:16 2024.02.15')
+    st.text('Code Frozen 09:50 2024.02.16')
     
