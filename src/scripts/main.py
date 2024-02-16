@@ -26,7 +26,7 @@ from database import *
 # st. set_page_config(layout="wide")
 # title
 st.title("ArgoXai")
-st.subheader("HERCULES - Contextual Financial Reviewer (Release G1)")
+st.subheader("HERCULES - Contextual Financial Reviewer (Release G2)")
 
 
 col1, col2, col3, c4, c5, c6, c7 ,c8 = st.columns([3,3,1,1,1,1,1,1])
